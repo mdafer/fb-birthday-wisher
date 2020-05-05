@@ -1,0 +1,29 @@
+{
+  "name": "FB_Bday_Wisher",
+  "description": "",
+  "version": "1.0.0",
+  "dependencies": {
+    "async": "^2.6.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.9.0",
+    "chromedriver": "^81.0.0",
+    "datejs": "^1.0.0-rc3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^3.2.0",
+    "geckodriver": "^1.19.1",
+    "jsonwebtoken": "^7.4.1",
+    "lodash.isempty": "^4.4.0",
+    "lodash.pick": "^4.4.0",
+    "pm2": "^4.1.2",
+    "request": "^2.88.0",
+    "sanitize-html": "^1.14.1",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "scripts": {
+    "debug": "node --inspect-brk index"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
+  }
+}
