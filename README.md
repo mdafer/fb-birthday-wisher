@@ -39,3 +39,5 @@ Alternatively, you can install the following chrome extension (Recommended) to o
 ## Note
 
 You may run this on a daily schedule!
+
+Works only with new FB design
