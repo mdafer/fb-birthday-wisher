@@ -36,6 +36,6 @@ chrome://inspect
 Alternatively, you can install the following chrome extension (Recommended) to open the inpector automatically:
 [Node Inpector Manager](https://chrome.google.com/webstore/detail/nodejs-v8-inspector-manag/gnhhdgbaldcilmgcpfddgdbkhjohddkj)
 
-##Note
+## Note
 
 You may run this on a daily schedule!
