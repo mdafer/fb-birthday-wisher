@@ -1,6 +1,5 @@
 # fb-birthday-wisher
 Wishes my friends a happy birthday automatically!
-<<<<<<< HEAD
 
 Go to Docs for specific module documentation :)
 
@@ -38,4 +37,5 @@ Alternatively, you can install the following chrome extension (Recommended) to o
 [Node Inpector Manager](https://chrome.google.com/webstore/detail/nodejs-v8-inspector-manag/gnhhdgbaldcilmgcpfddgdbkhjohddkj)
 
 ##Note
+
 You may run this on a daily schedule!
