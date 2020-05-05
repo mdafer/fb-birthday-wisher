@@ -28,7 +28,6 @@ module.exports = {
 			return await waitModel.waitPageChange({
 				driver: driver,
 				oldURL,
-				intendedURL: 'https://www.facebook.com',
 				env: params.env
 			})
 		} catch (err) {

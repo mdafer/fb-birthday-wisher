@@ -42,10 +42,12 @@ module.exports = {
 			let friendName = await entry.getText();
 			try {
 				console.log(friendName)
-				const textEle = await entry.findElement(By.xpath("./ancestor::div[2]/following-sibling::div//*[@data-text=\"true\"]/../parent::*")).click()
-				let currentElement = driver.switchTo().activeElement();
-				await currentElement.sendKeys(wishes.select(friendName));
-
+				await entry.findElement(By.xpath("./ancestor::div[2]/following-sibling::div//*[@data-text=\"true\"]/../parent::*")).click()
+				let currentElement = driver.switchTo().activeElement()
+				const mywish = wishes.select(friendName)
+				if(!mywish)
+					continue
+				await currentElement.sendKeys(mywish);
 				//To submit directly:
 				//await currentElement.sendKeys('\n')
 			} catch (err) {

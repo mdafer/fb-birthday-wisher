@@ -1,12 +1,9 @@
 function getRandomWish(wishArr) {
-    let min = 0;
-    let max = wishArr.length;
-
-    let index = Math.floor(Math.random() * (max - min) + min);
-    return wishArr[index];
+    return wishArr[Math.floor(Math.random() * wishArr.length)];
 };
 
 const friendGroups = {
+	noWish:['Unlucky Friend'],
 	Group1:['John Doe'],
 	Group2:['Steve Mostafa Dafer', 'Mahmoud Dafer']
 }
@@ -36,7 +33,7 @@ module.exports = {
 		const firstName = friendName.split(' ')[0]
 		const wishList=
 		{
-			normalEn:[`Happy Birthday ${firstName}! Best Wishes :) \uD83C\uDF70\uD83C\uDF82\uD83C\uDF89`],
+			normalEn:[`Happy Birthday ${firstName}! Best Wishes :) \uD83C\uDF70\uD83C\uDF82\uD83C\uDF89`,`Happy Birthday ${firstName}! Best Wishes :) \uD83C\uDF70\uD83C\uDF82\uD83C\uDF89`,`Happy Birthday ${firstName}! Best Wishes :) \uD83C\uDF70\uD83C\uDF82\uD83C\uDF89`],
 			normalAr:[`كل سنة وانت طيب يا  ${firstName}! العمر كله بالصحة والعافية ان شاء الله  :) \uD83C\uDF70\uD83C\uDF82\uD83C\uDF89`],
 			Group1:[
 			`Happy Birthday ${firstName}! I wish you all the happiness in the world! :)  \uD83C\uDF70\uD83C\uDF82\uD83C\uDF89`,
@@ -44,6 +41,10 @@ module.exports = {
 			],
 			Group2:[`كل سنة وانت طيب! العمر كله بالصحة والعافية ان شاء الله :)`]
 		}
-		return getRandomWish(wishList[getFriendGroup(friendName)])
+
+		const friendGroup = getFriendGroup(friendName);
+		if(friendGroup=='noWish')
+			return false
+		return getRandomWish(wishList[friendGroup])
 	}
 }
