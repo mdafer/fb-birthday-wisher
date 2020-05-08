@@ -29,8 +29,9 @@ module.exports = {
 		let blockTitle = "Today's Birthdays"
 		if (params.isToday === false)
 			blockTitle = "Recent Birthdays"
-
-		let myfriends = await driver.findElements(By.xpath("//h3[text() =\"" + blockTitle + "\"]//parent::div/following-sibling::div//h3"))
+		const blockXPath="//h3[text() =\"" + blockTitle + "\"]//parent::div/following-sibling::div//h3"
+		await driver.wait(until.elementLocated(By.xpath(blockXPath)), 5 * 1000)
+		let myfriends = await driver.findElements(By.xpath(blockXPath))
 
 		if (!myfriends.length) {
 			console.log('No friends have birthdays today!')
