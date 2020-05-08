@@ -29,12 +29,20 @@ module.exports = {
 		let blockTitle = "Today's Birthdays"
 		if (params.isToday === false)
 			blockTitle = "Recent Birthdays"
-		const blockXPath="//h3[text() =\"" + blockTitle + "\"]//parent::div/following-sibling::div//h3"
-		await driver.wait(until.elementLocated(By.xpath(blockXPath)), 5 * 1000)
+		const blockXPath="//*[text() =\""+blockTitle+"\"]//parent::div/following-sibling::div//*[self::h1 or self::h2 or self::h3 or self::h4]"
+
+		try{
+			await driver.wait(until.elementLocated(By.xpath(blockXPath)), 5 * 1000)
+		}
+		catch(e)
+		{
+			console.log('No '+blockTitle+'!')
+			return
+		}
 		let myfriends = await driver.findElements(By.xpath(blockXPath))
 
 		if (!myfriends.length) {
-			console.log('No friends have birthdays today!')
+			console.log('No friends have '+blockTitle+'!')
 			return
 		}
 		//this foreach is synchronous
