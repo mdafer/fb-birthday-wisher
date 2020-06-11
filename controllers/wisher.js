@@ -51,7 +51,7 @@ module.exports = {
 			let friendName = await entry.getText();
 			try {
 				console.log(friendName)
-				await entry.findElement(By.xpath("./ancestor::div[2]/following-sibling::div//*[@data-text=\"true\"]/../parent::*")).click()
+				await entry.findElement(By.xpath("./ancestor::div[3]/following-sibling::div//*[@data-text=\"true\"]/../parent::*")).click()
 				let currentElement = driver.switchTo().activeElement()
 				const mywish = wishes.select(friendName)
 				if(!mywish)
